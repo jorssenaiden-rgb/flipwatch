@@ -35,5 +35,5 @@ if [ ! -f .env.local ]; then
 fi
 
 step "Starting FlipWatch"
-echo "Opening http://127.0.0.1:3000 — keep this terminal open while you use FlipWatch (Ctrl+C stops it)."
+echo "Opening http://127.0.0.1:3000 - keep this terminal open while you use FlipWatch (Ctrl+C stops it)."
 exec ./start.sh

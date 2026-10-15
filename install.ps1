@@ -1,5 +1,5 @@
 # FlipWatch installer for Windows.
-#   Right-click → "Run with PowerShell", or in PowerShell:   .\install.ps1
+#   Right-click -> "Run with PowerShell", or in PowerShell:   powershell -ExecutionPolicy Bypass -File .\install.ps1
 #   Add -AutoStart to start FlipWatch automatically when you sign in to Windows.
 param([switch]$AutoStart)
 $ErrorActionPreference = "Stop"
@@ -53,6 +53,6 @@ if ($AutoStart) {
   Start-Process "http://127.0.0.1:3000"
 } else {
   Step "Starting FlipWatch"
-  Write-Host "Opening http://127.0.0.1:3000 — keep this window open while you use FlipWatch (Ctrl+C stops it)."
+  Write-Host "Opening http://127.0.0.1:3000 - keep this window open while you use FlipWatch (Ctrl+C stops it)."
   & "$PSScriptRoot\start.ps1"
 }

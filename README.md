@@ -27,7 +27,9 @@ You need **Node.js 22 or newer** — get the LTS version from [nodejs.org](https
    OneDrive/Dropbox — the database shouldn't be synced while it's in use).
 2. Run the installer:
    - **Windows:** right-click `install.ps1` → *Run with PowerShell*
-     (or in PowerShell: `.\install.ps1` — add `-AutoStart` to start FlipWatch automatically when you sign in).
+     (or in PowerShell, in the FlipWatch folder: `powershell -ExecutionPolicy Bypass -File .\install.ps1`;
+     add `-AutoStart` to start FlipWatch automatically when you sign in. Windows blocks running downloaded
+     scripts directly by default, and this allows it for this one run.)
    - **macOS / Linux:** `./install.sh`
 3. Your browser opens **http://127.0.0.1:3000** with a short setup:
    1. **AI engine** — choose one:
