@@ -27,7 +27,7 @@ export default async function HuntPage() {
     <div className="mx-auto max-w-3xl">
       <PageHeader
         title="Deal Hunt"
-        description="Tell Claude what you're after. It searches Facebook, Craigslist and Kijiji right now, checks market prices and ranks the best deals."
+        description="Tell the AI what you're after. It searches Facebook, Craigslist and Kijiji right now, checks market prices and ranks the best deals."
       />
       <HuntChat
         turns={turns}

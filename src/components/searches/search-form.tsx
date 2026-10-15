@@ -92,11 +92,11 @@ const previewSearch = catchActionFailure(previewSearchAction, "Couldn't run the 
 
 /** The AI module's status message plus how to enable it (unless the message already says). */
 function aiHint(message: string | undefined): string {
-  const setup = "Set ANTHROPIC_API_KEY to enable Claude deal analysis.";
+  const setup = "Choose an AI engine in Settings → AI engine to enable deal analysis.";
   const trimmed = message?.trim();
   if (!trimmed) return setup;
   const sentence = /[.!?]$/.test(trimmed) ? trimmed : `${trimmed}.`;
-  return trimmed.includes("ANTHROPIC_API_KEY") ? sentence : `${sentence} ${setup}`;
+  return trimmed.includes("Settings") ? sentence : `${sentence} ${setup}`;
 }
 
 /** The saved-search editor used by /searches/new and /searches/[id]/edit. */
@@ -419,7 +419,7 @@ export function SearchForm({
             label="Minimum AI score"
             htmlFor="notifyMinAiScore"
             error={error("notifyMinAiScore")}
-            hint="0–100. Only alert once Claude has rated the listing at least this (turns on AI evaluation). Blank: no AI filter."
+            hint="0–100. Only alert once the AI has rated the listing at least this (turns on AI evaluation). Blank: no AI filter."
           >
             <Input
               id="notifyMinAiScore"
@@ -462,7 +462,7 @@ export function SearchForm({
           label="AI buyer notes"
           htmlFor="aiInstructions"
           error={error("aiInstructions")}
-          hint="Your buying strategy for this search, given to Claude with every evaluation — e.g. “I part PCs out: value them by their parts.”"
+          hint="Your buying strategy for this search, given to the AI with every evaluation — e.g. “I part PCs out: value them by their parts.”"
         >
           <Textarea
             id="aiInstructions"

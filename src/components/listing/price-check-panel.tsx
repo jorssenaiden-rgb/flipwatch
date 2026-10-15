@@ -148,7 +148,7 @@ export function PriceCheckPanel({ listingId, check, configured }: { listingId: n
         ) : (
           <p className="text-sm text-muted">
             Search Facebook Marketplace and Craigslist for current listings of this item — and, for a computer, each of its
-            parts — and let Claude work out what it&apos;s really worth.
+            parts — and let the AI work out what it&apos;s really worth.
           </p>
         )}
         <PriceCheckButton listingId={listingId} configured={configured} rerun={r !== undefined} />

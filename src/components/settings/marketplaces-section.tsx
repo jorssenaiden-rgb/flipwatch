@@ -24,20 +24,11 @@ export interface MarketplaceStatusView {
   health: MarketplaceHealthView | null;
 }
 
-/** Environment variables that unlock or tune each marketplace. */
-const SETUP: Partial<Record<MarketplaceId, Array<{ name: string; optional?: boolean }>>> = {
-  ebay: [{ name: "EBAY_CLIENT_ID" }, { name: "EBAY_CLIENT_SECRET" }, { name: "EBAY_MARKETPLACE_ID", optional: true }],
-  facebook: [{ name: "FACEBOOK_ENABLED=true" }, { name: "FACEBOOK_COOKIES" }],
+/** Where each marketplace that needs setup is configured. */
+const SETUP: Partial<Record<MarketplaceId, { label: string; href: string }>> = {
+  ebay: { label: "Settings → eBay", href: "#ebay" },
+  facebook: { label: "Settings → Facebook", href: "#facebook" },
 };
-
-function Env({ name, optional }: { name: string; optional?: boolean }) {
-  return (
-    <code className="rounded bg-surface-2 px-1.5 py-0.5 font-mono text-xs text-fg">
-      {name}
-      {optional ? <span className="text-muted"> (optional)</span> : null}
-    </code>
-  );
-}
 
 function HealthLine({ health }: { health: MarketplaceHealthView | null }) {
   if (!health) return <p className="text-sm text-muted">Not queried yet.</p>;
@@ -103,11 +94,12 @@ export function MarketplacesSection({ marketplaces }: { marketplaces: Marketplac
                 </div>
                 {m.message ? <p className="text-sm break-words text-muted">{m.message}</p> : null}
                 {setup ? (
-                  <p className="flex flex-wrap items-center gap-1.5 text-xs text-muted">
-                    <span>Set:</span>
-                    {setup.map((env) => (
-                      <Env key={env.name} {...env} />
-                    ))}
+                  <p className="text-xs text-muted">
+                    Set up in{" "}
+                    <a href={setup.href} className="font-medium text-accent hover:underline">
+                      {setup.label}
+                    </a>
+                    .
                   </p>
                 ) : (
                   <p className="text-xs text-muted">No setup needed.</p>

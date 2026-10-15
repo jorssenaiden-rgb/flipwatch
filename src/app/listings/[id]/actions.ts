@@ -35,7 +35,7 @@ export async function runAiAnalysisAction(_prev: AiRunState, formData: FormData)
   if (!parsed.success) return { status: "error", error: "Invalid listing" };
   const status = aiStatus();
   if (!status.configured) {
-    return { status: "error", error: status.message ?? "AI analysis is not configured. Set ANTHROPIC_API_KEY on the server." };
+    return { status: "error", error: status.message ?? "AI analysis is not configured. Choose an AI engine in Settings → AI engine." };
   }
   try {
     const db = await getDb();

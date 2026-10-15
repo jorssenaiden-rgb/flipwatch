@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Link from "next/link";
 import { AlertTriangle, CheckCircle2, KeyRound, MessageCircleQuestion, Sparkles } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { DealScore } from "@/components/ui/deal-score";
@@ -90,7 +91,7 @@ export function AiPanel({
           </>
         ) : status.configured ? (
           <p className="text-sm text-muted">
-            Get Claude&apos;s take on this listing: a resale range, a fair offer, red flags and questions to ask the seller.
+            Get the AI&apos;s take on this listing: a resale range, a fair offer, red flags and questions to ask the seller.
           </p>
         ) : null}
 
@@ -98,8 +99,11 @@ export function AiPanel({
           <div className="flex gap-2 rounded-lg border border-dashed border-border px-3 py-2.5 text-sm text-muted">
             <KeyRound className="mt-0.5 size-4 shrink-0" aria-hidden />
             <p>
-              AI analysis is off. Set <code className="rounded bg-surface-2 px-1 py-0.5 text-xs">ANTHROPIC_API_KEY</code> in the
-              server environment and restart FlipWatch to enable it.
+              AI analysis is off. Choose an AI engine in{" "}
+              <Link href="/settings#ai" className="font-medium text-accent hover:underline">
+                Settings → AI engine
+              </Link>{" "}
+              to enable it.
             </p>
           </div>
         ) : null}

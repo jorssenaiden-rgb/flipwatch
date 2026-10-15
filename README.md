@@ -16,6 +16,16 @@ want, alerts you the moment a good deal appears, and uses AI to tell you what it
 
 Everything runs on your machine. Your API keys, Facebook session and data never leave it.
 
+![The deal feed: new matches and price drops with deal scores and estimated profit](docs/screenshots/feed.png)
+
+| AI deal analysis | Flip pipeline |
+|---|---|
+| ![A listing with the AI's resale range, suggested offer, red flags and questions for the seller](docs/screenshots/listing.png) | ![Pipeline board with capital tied up, realized profit and ROI](docs/screenshots/pipeline.png) |
+| **First-run setup: pick an AI engine** | **…and your area** |
+| ![Setup step 1: choose Claude or OpenAI with an API key, or Claude Code / Codex on this computer](docs/screenshots/setup-ai.png) | ![Setup step 2: find your town and set a search radius on the map](docs/screenshots/setup-area.png) |
+
+<sub>Screenshots use FlipWatch's built-in demo data (`npm run db:seed`).</sub>
+
 ---
 
 ## Install

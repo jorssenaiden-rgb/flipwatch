@@ -78,7 +78,7 @@ function PickCard({ pick }: { pick: HuntPick }) {
           ) : null}
         </div>
         <div className="flex flex-wrap items-center gap-1.5">
-          <DealScore score={pick.score} title="Claude's deal score for this hunt" />
+          <DealScore score={pick.score} title="AI deal score for this hunt" />
           <MarketplaceBadge marketplace={pick.marketplace} />
           {pick.locationText ? <span className="text-xs text-muted">{pick.locationText}</span> : null}
         </div>
